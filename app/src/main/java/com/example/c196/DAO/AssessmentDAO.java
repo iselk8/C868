@@ -37,21 +37,6 @@ public interface AssessmentDAO {
     @Query("SELECT * FROM assessment ORDER BY assessment_due_date DESC")
     List<AssessmentModel> getAllAssessment();
 
-    @Query("DELETE FROM assessment")
-    int deleteAllAssessments();
-
-    @Query("SELECT COUNT(*) FROM assessment")
-    int getAssessmentCount();
-
-    @Query("SELECT COUNT(*) FROM assessment WHERE course_id = :courseID")
-    int getAssessmentCountByCourse(int courseID);
-
-    @Query("SELECT COUNT(*) FROM assessment WHERE term_id = :termID")
-    int getAssessmentCountByTerm(int termID);
-
-    @Query("SELECT COUNT(*) FROM assessment WHERE username = :username")
-    int getAssessmentCountByUser(String username);
-
     @Query("SELECT EXISTS(SELECT * FROM assessment WHERE username = :username AND course_id = :courseID AND assessment_title = :assessmentTitle)")
     boolean isTaken(String username, int courseID, String assessmentTitle);
 }

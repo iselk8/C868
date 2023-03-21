@@ -37,13 +37,4 @@ public interface TermDAO {
     @Query("SELECT EXISTS(SELECT * FROM term WHERE username = :username AND term_title = :termTitle)")
     boolean isTaken(String username, String termTitle);
 
-    @Query("DELETE FROM term")
-    int deleteAllTerms();
-
-    @Query("SELECT COUNT(*) FROM term")
-    int getTermCount();
-
-    @Query("SELECT COUNT(*) FROM term WHERE username = :username")
-    int getTermCountByUser(String username);
-
 }

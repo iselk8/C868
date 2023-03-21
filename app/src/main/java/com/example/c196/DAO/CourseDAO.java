@@ -43,15 +43,4 @@ public interface CourseDAO {
     @Query("SELECT course_id FROM course WHERE username = :username AND course_title = :courseTitle")
     int getCourseIDByTitle(String username, String courseTitle);
 
-    @Query("DELETE FROM course")
-    int deleteAllCourses();
-
-    @Query("SELECT COUNT(*) FROM course")
-    int getCourseCount();
-
-    @Query("SELECT COUNT(*) FROM course WHERE term_id = :termID")
-    int getCourseCountByTermID(int termID);
-
-    @Query("SELECT COUNT(*) FROM course WHERE username = :username")
-    int getCourseCountByUser(String username);
 }
