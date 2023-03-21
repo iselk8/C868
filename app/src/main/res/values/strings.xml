@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">C196</string>
+
+    <!-- General Strings -->
+    <string name="greeting_msg">Hello There \nNight Owl!</string>
+    <string name="welcome_msg">Welcome to your term tracker</string>
+    <string name="login">Log in</string>
+    <string name="signup">Sign up</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="dont_have_account">Don\'t have an account \?</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_have_account">Already have an account\?</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="custom_greeting_msg">Hello Night Owl</string>
+    <string name="data_type">Data Type</string>
+    <string name="courses">Courses</string>
+    <string name="assessments">Assessments</string>
+    <string name="instructors">Instructors</string>
+    <string name="more_info">More info</string>
+    <string name="details">Details</string>
+    <string name="add_term">Add term</string>
+    <string name="edit_term">Edit term</string>
+    <string name="delete_term">Delete term</string>
+    <string name="view_term">View term</string>
+    <string name="terms">Term</string>
+    <string name="no_terms_to_display">Here!!</string>
+    <string name="nothing_to_display">Nothing to display</string>
+    <string name="add_course">Add course</string>
+    <string name="course_detail">Course \ndetail</string>
+    <string name="view_course">View course</string>
+    <string name="share_course_notes_email">Email Notes</string>
+    <string name="share_course_notes_sms">Sms Notes</string>
+    <string name="edit_course">Edit course</string>
+    <string name="delete_course">Delete course</string>
+    <string name="add_assessment">Add assessment</string>
+    <string name="assessment_detail">Assessment \ndetail</string>
+    <string name="edit_assessment">Edit assessment</string>
+    <string name="delete_assessment">Delete assessment</string>
+    <string name="enter_term_title">Term Title</string>
+    <string name="enter_course_title">Course Title</string>
+    <string name="enter_course_instructor_name">Course Instructor\'s Name</string>
+    <string name="enter_course_instructor_phone">Course Instructor\'s Phone Number</string>
+    <string name="enter_course_instructor_email">Course Instructor\'s E-Mail</string>
+    <string name="enter_course_note">Notes(Optional)</string>
+    <string name="enter_assessment_title">Assessment Title</string>
+    <string name="enter_start_date">Enter Start Date</string>
+    <string name="view_start_date">Start Date</string>
+    <string name="enter_date_error">End Date must be after the Start Date</string>
+    <string name="enter_end_date">Enter End Date</string>
+    <string name="view_end_date">End Date</string>
+    <string name="enter_due_date">Enter Due Date</string>
+    <string name="select_status">Select Status</string>
+    <string name="select_term">Select Term</string>
+    <string name="select_course">Select Course</string>
+    <string name="assessment_type">Assessment Type</string>
+    <string name="assessment_type_invalid_selection">Assessment Type must be selected</string>
+    <string name="objective">Objective</string>
+    <string name="performance">Performance</string>
+    <string name="in_progress">In Progress</string>
+    <string name="completed">Completed</string>
+    <string name="dropped">Dropped</string>
+
+
+</resources>

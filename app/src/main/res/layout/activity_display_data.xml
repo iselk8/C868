@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayData"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <ImageView
+            android:id="@+id/display_data_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="backBtnPressed"
+            android:padding="15dp"
+            android:src="@drawable/arrow_back_black" />
+
+        <ImageView
+            android:id="@+id/display_data_add_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:onClick="addBtnPressed"
+            android:padding="15dp"
+            android:src="@drawable/plus" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/data_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/josefin_sans_bold"
+        android:padding="10dp"
+        android:text="@string/data_type"
+        android:textAllCaps="true"
+        android:textColor="@color/wgu_blue"
+        android:textSize="36sp" />
+
+    <TextView
+        android:id="@+id/no_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/josefin_sans_bold"
+        android:padding="10dp"
+        android:text="@string/nothing_to_display"
+        android:textAllCaps="true"
+        android:textColor="@color/red"
+        android:textSize="24sp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+
+        android:id="@+id/data_recyclerview"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_height="match_parent"/>
+
+
+</LinearLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="5sp"
+    android:elevation="2sp"
+    android:background="#fff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10sp">
+
+        <TextView
+            android:id="@+id/rv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:fontFamily="@font/josefin_sans_bold"
+            android:textColor="@color/wgu_blue"
+            android:textSize="32sp"
+            android:layout_toLeftOf="@+id/rv_owner"/>
+
+        <TextView
+            android:id="@+id/rv_owner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10sp"
+            android:text="Owner"
+            android:fontFamily="@font/josefin_sans_bold"
+            android:textColor="@color/wgu_blue"
+            android:textSize="32sp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10sp">
+
+        <TextView
+            android:id="@+id/rv_start_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/josefin_sans_bold"
+            android:textColor="@color/wgu_blue"
+            android:textSize="18sp"
+            android:text="start date"/>
+
+        <TextView
+            android:id="@+id/rv_end_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/josefin_sans_bold"
+            android:textColor="@color/wgu_blue"
+            android:textSize="18sp"
+            android:text="end date"
+            android:layout_alignBottom="@+id/rv_details"/>
+
+        <Button
+            android:id="@+id/rv_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/josefin_sans_bold"
+            android:onClick="launchMoreInfo"
+            android:text="@string/details"
+            android:textColor="@color/wgu_blue"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
