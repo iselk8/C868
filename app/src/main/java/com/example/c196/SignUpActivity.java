@@ -13,7 +13,7 @@ import com.example.c196.DAO.UserDAO;
 import com.example.c196.Entities.UserModel;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class SignUpScreenActivity extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
     TextInputLayout signupName, signupUsername, signupPassword, signupConfirmPassword;
     ImageView backBtn;
     Database db;
@@ -22,7 +22,7 @@ public class SignUpScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up_screen);
+        setContentView(R.layout.activity_sign_up);
 
         //Hooks
         signupName = (TextInputLayout) findViewById(R.id.signup_name_field);
@@ -64,7 +64,7 @@ public class SignUpScreenActivity extends AppCompatActivity {
                 userDAO.insertUser(userModel);
                 Utility.clearTextInputLayoutText(signupName, signupUsername, signupPassword, signupConfirmPassword);
                 Toast.makeText(this, "Data Successfully saved", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getApplicationContext(), LogInScreenActivity.class);
+                Intent intent = new Intent(getApplicationContext(), LogInActivity.class);
                 startActivity(intent);
                 super.finish();
             }else {
@@ -79,7 +79,7 @@ public class SignUpScreenActivity extends AppCompatActivity {
 
 
     public void launchSignInScreen(View view) {
-        Intent intent = new Intent(this, LogInScreenActivity.class);
+        Intent intent = new Intent(this, LogInActivity.class);
         startActivity(intent);
         super.finish();
     }

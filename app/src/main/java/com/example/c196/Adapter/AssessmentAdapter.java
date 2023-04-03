@@ -19,7 +19,6 @@ import java.util.List;
 public class AssessmentAdapter extends RecyclerView.Adapter<AssessmentAdapter.AssessmentViewHolder> {
 
     Context context;
-
     List<AssessmentModel> assessmentList;
 
     public AssessmentAdapter(Context context, List<AssessmentModel> assessmentList) {
