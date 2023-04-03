@@ -282,7 +282,7 @@ public class Utility {
     }
 
 
-    public static Long getTimeInMilliSeconds(String dateVal){
+    public static long getTimeInMilliSeconds(String dateVal){
         try{
             Date date = dateFormat.parse(dateVal + TimeZone.getDefault().getDisplayName());
             return date.getTime();

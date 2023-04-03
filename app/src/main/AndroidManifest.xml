@@ -39,13 +39,13 @@
             android:name=".Dashboard"
             android:exported="false" />
         <activity
-            android:name=".SignUpScreenActivity"
+            android:name=".SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".LogInScreenActivity"
+            android:name=".LogInActivity"
             android:exported="false" />
         <activity
-            android:name=".LogIn"
+            android:name=".WelcomeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

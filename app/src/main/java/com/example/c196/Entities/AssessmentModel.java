@@ -30,7 +30,7 @@ public class AssessmentModel {
     private int termID;
 
     @ColumnInfo(name = "assessment_title")
-    String assessmentTitle;
+    private String assessmentTitle;
 
     @ColumnInfo(name = "course_id")
     private int courseID;

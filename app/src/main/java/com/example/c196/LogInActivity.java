@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.example.c196.DAO.UserDAO;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class LogInScreenActivity extends AppCompatActivity {
+public class LogInActivity extends AppCompatActivity {
 
     TextInputLayout loginUsername, loginPassword;
     ImageView backBtn;
@@ -22,7 +22,7 @@ public class LogInScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_log_in_screen);
+        setContentView(R.layout.activity_log_in);
 
         //Hooks
         loginUsername = (TextInputLayout) findViewById(R.id.login_username_field);
@@ -65,7 +65,7 @@ public class LogInScreenActivity extends AppCompatActivity {
     }
 
     public void launchSignUpScreen(View view){
-        Intent intent = new Intent(this, SignUpScreenActivity.class);
+        Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
         super.finish();
     }
