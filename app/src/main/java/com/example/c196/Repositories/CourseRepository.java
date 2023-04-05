@@ -52,6 +52,8 @@ public class CourseRepository {
         return courseDAO.getCourseNameByID(courseID);
     }
 
+    public List<CourseModel> getCourseByTitle(String username, String title){return courseDAO.getCourseByTitle(username, title);}
+
     public int getCourseIDByTitle(String username, String courseTitle){
         return courseDAO.getCourseIDByTitle(username, courseTitle);
     }

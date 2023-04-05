@@ -26,7 +26,7 @@
     <string name="edit_term">Edit term</string>
     <string name="delete_term">Delete term</string>
     <string name="view_term">View term</string>
-    <string name="terms">Term</string>
+    <string name="terms">Terms</string>
     <string name="no_terms_to_display">Here!!</string>
     <string name="nothing_to_display">Nothing to display</string>
     <string name="add_course">Add course</string>
@@ -63,6 +63,10 @@
     <string name="in_progress">In Progress</string>
     <string name="completed">Completed</string>
     <string name="dropped">Dropped</string>
+    <string name="search">Search</string>
+    <string name="results">Results</string>
+    <string name="no_results">No Results</string>
+    <string name="export">Export to pdf</string>
 
 
 </resources>

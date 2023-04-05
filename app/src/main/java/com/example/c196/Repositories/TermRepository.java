@@ -22,6 +22,8 @@ public class TermRepository {
 
     public List<TermModel> getTermsByUsername(String username){return termDAO.getTermByUser(username);}
 
+    public List<TermModel> getTermByTitle(String username, String title){return termDAO.getTermByTitle(username, title);}
+
     public TermModel getTermByID(int termID){
         return termDAO.getTermByID(termID);
     }

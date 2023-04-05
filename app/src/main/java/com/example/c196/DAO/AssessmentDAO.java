@@ -37,6 +37,9 @@ public interface AssessmentDAO {
     @Query("SELECT * FROM assessment ORDER BY assessment_due_date DESC")
     List<AssessmentModel> getAllAssessment();
 
+    @Query("SELECT * FROM assessment WHERE username = :username AND assessment_title LIKE '%' || :title || '%'")
+    List<AssessmentModel> getAssessmentByTitle(String username, String title);
+
     @Query("SELECT EXISTS(SELECT * FROM assessment WHERE username = :username AND course_id = :courseID AND assessment_title = :assessmentTitle)")
     boolean isTaken(String username, int courseID, String assessmentTitle);
 }

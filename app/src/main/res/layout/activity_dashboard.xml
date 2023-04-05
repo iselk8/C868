@@ -28,12 +28,14 @@
                 android:onClick="logOutBtn"/>
 
             <ImageView
+                android:id="@+id/dashboard_search_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/search_black"
                 android:padding="15dp"
                 android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"/>
+                android:layout_alignParentRight="true"
+                android:onClick="launchSearch" />
 
         </RelativeLayout>
 
@@ -193,8 +195,18 @@
                 android:src="@drawable/assessment_3d"
                 android:layout_alignParentRight="true"/>
 
-
         </RelativeLayout>
+
+        <Button
+            android:id="@+id/add_term_submit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_blue"
+            android:onClick="addTerm"
+            android:text="@string/export"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

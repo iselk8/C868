@@ -7,6 +7,7 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import com.example.c196.Entities.CourseModel;
+import com.example.c196.Repositories.CourseRepository;
 
 import java.util.List;
 
@@ -42,5 +43,8 @@ public interface CourseDAO {
 
     @Query("SELECT course_id FROM course WHERE username = :username AND course_title = :courseTitle")
     int getCourseIDByTitle(String username, String courseTitle);
+
+    @Query("SELECT * FROM course WHERE username = :username AND course_title LIKE '%' || :courseTitle || '%'")
+    List<CourseModel> getCourseByTitle(String username, String courseTitle);
 
 }

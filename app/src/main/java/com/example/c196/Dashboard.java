@@ -12,7 +12,7 @@ import android.widget.ImageView;
 public class Dashboard extends AppCompatActivity {
 
     String username;
-    ImageView logout;
+    ImageView logout, search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,9 +24,20 @@ public class Dashboard extends AppCompatActivity {
         logout = (ImageView) findViewById(R.id.dashboard_logout_btn);
         logout.setClickable(true);
 
+        search = (ImageView) findViewById(R.id.dashboard_search_btn);
+        search.setClickable(true);
+
         if(extras != null){
             username = extras.getString("username");
         }
+    }
+
+    public void launchSearch(View view){
+
+        Intent intent = new Intent(this, SearchActivity.class);
+        intent.putExtra("username", username);
+        startActivity(intent);
+
     }
 
     public void logOutBtn(View view){
