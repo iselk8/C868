@@ -25,6 +25,9 @@ public interface TermDAO {
     @Query("SELECT term_id FROM term WHERE username = :username AND term_title = :termTitle")
     int getTermIDByTitle(String username, String termTitle);
 
+    @Query("SELECT * FROM term WHERE username = :username AND term_title LIKE '%' || :termTitle || '%'")
+    List<TermModel> getTermByTitle(String username, String termTitle);
+
     @Query("SELECT * FROM term WHERE username = :username")
     List<TermModel> getTermByUser(String username);
 

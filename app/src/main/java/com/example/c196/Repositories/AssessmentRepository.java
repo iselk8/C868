@@ -36,6 +36,8 @@ public class AssessmentRepository {
         return assessmentList;
     }
 
+    public List<AssessmentModel> getAssessmentByTitle(String username, String title){return assessmentDAO.getAssessmentByTitle(username, title);}
+
     public List<AssessmentModel> getAssessmentsByCourseID(int courseID){
         return assessmentDAO.getAssessmentByCourseID(courseID);
     }
