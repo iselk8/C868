@@ -55,6 +55,7 @@ public class LogInActivity extends AppCompatActivity {
                 Toast.makeText(this, "Logged in as " + username, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(this, Dashboard.class);
                 intent.putExtra("username", username);
+                intent.putExtra("name", userDAO.getUserFirstName(username));
                 startActivity(intent);
             }else {
                 //If the login attempt is not successful

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -33,6 +34,7 @@ public class SearchActivity extends AppCompatActivity {
     TextInputLayout searchTitleField;
     Button searchBtn;
 
+    ImageView backBtn;
     TextView searchResultTitle, searchResultNoDisplay;
     RecyclerView resultsRecyclerView;
 
@@ -53,6 +55,8 @@ public class SearchActivity extends AppCompatActivity {
         searchResultTitle = findViewById(R.id.search_result_title);
         searchResultNoDisplay = findViewById(R.id.search_result_no_display);
         resultsRecyclerView = findViewById(R.id.search_result_recyclerview);
+        backBtn = findViewById(R.id.search_result_back_button);
+        backBtn.setClickable(true);
 
         termRepo = new TermRepository(getApplication());
         courseRepo = new CourseRepository(getApplication());
@@ -102,8 +106,19 @@ public class SearchActivity extends AppCompatActivity {
                 })
         );
 
+    }
 
+    public void backBtnPressed(View view){
+        back();
+    }
 
+    @Override
+    public void onBackPressed(){
+        back();
+    }
+
+    private void back() {
+        super.finish();
     }
 
     public void search(View view){
@@ -131,18 +146,9 @@ public class SearchActivity extends AppCompatActivity {
 
     private void executeSearchAssessment(String searchStr) {
         Toast.makeText(this, "assessments " + searchStr, Toast.LENGTH_LONG).show();
-
         searchResultTitle.setVisibility(View.VISIBLE);
-
-        //AssessmentModel assessment = assessmentRepo.getAssessmentByTitle(username, searchStr);
         List<AssessmentModel> assessments = assessmentRepo.getAssessmentByTitle(username, searchStr);
 
-        /*
-        if(assessment != null){
-            assessments.add(assessment);
-        }
-
-         */
 
         if(assessments.size() < 1){
             searchResultNoDisplay.setVisibility(View.VISIBLE);
@@ -158,15 +164,7 @@ public class SearchActivity extends AppCompatActivity {
         Toast.makeText(this, "courses " + searchStr, Toast.LENGTH_LONG).show();
         searchResultTitle.setVisibility(View.VISIBLE);
 
-        //CourseModel course = courseRepo.getCourseByTitle(username, searchStr);
         List<CourseModel> courses = courseRepo.getCourseByTitle(username, searchStr);
-
-        /*
-        if(course != null){
-            courses.add(course);
-        }
-
-         */
 
         if(courses.size() < 1){
             searchResultNoDisplay.setVisibility(View.VISIBLE);
@@ -183,16 +181,7 @@ public class SearchActivity extends AppCompatActivity {
         Toast.makeText(this, "terms " + searchStr, Toast.LENGTH_LONG).show();
         searchResultTitle.setVisibility(View.VISIBLE);
 
-        //TermModel term = termRepo.getTermByTitle(username, searchStr);
         List<TermModel> terms = termRepo.getTermByTitle(username, searchStr);
-
-
-        /*
-        if(term != null) {
-            terms.add(term);
-        }
-
-         */
 
         if(terms.size() < 1){
             searchResultNoDisplay.setVisibility(View.VISIBLE);

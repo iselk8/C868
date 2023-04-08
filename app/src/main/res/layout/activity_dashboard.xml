@@ -198,13 +198,13 @@
         </RelativeLayout>
 
         <Button
-            android:id="@+id/add_term_submit_btn"
+            android:id="@+id/dashboard_export_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_margin="10dp"
             android:background="@drawable/button_blue"
-            android:onClick="addTerm"
+            android:onClick="export"
             android:text="@string/export"
             android:textColor="@color/white" />
 
