@@ -186,7 +186,7 @@ public class EditTerm extends AppCompatActivity {
                     public void run() {
                         if (!isFinishing()) {
                             new AlertDialog.Builder(EditTerm.this).setTitle("Cannot Delete Term")
-                                    .setMessage("This term has courses assigned to it. If you wish to delete this course, please delete the associated assessments.")
+                                    .setMessage("This term has courses assigned to it. If you wish to delete this course, please delete the associated courses.")
                                     .setCancelable(true).setNegativeButton("Ok", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialogInterface, int i) {

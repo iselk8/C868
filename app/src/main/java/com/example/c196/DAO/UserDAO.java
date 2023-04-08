@@ -17,6 +17,9 @@ public interface UserDAO {
     @Query("Select * FROM user")
     List<UserModel> getAllUsers();
 
+    @Query("SELECT name FROM user WHERE username = :username")
+    String getUserFirstName(String username);
+
     @Query("SELECT EXISTS(SELECT * FROM user WHERE username=:userName)")
     boolean isTaken(String userName);
 
