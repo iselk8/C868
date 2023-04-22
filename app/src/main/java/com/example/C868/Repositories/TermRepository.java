@@ -12,12 +12,8 @@ public class TermRepository {
 
     private TermDAO termDAO;
 
-    private List<TermModel> termList;
-
     public TermRepository(Application application) {
-        Database db = Database.getDatabase(application);
-        termDAO = db.getTermDAO();
-        termList = termDAO.getAllTerms();
+        termDAO = Database.getDatabase(application).getTermDAO();
     }
 
     public List<TermModel> getTermsByUsername(String username){return termDAO.getTermByUser(username);}

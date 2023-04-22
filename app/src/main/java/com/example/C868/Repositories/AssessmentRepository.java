@@ -12,28 +12,16 @@ public class AssessmentRepository {
 
     private AssessmentDAO assessmentDAO;
 
-    private List<AssessmentModel> assessmentList;
-
     public AssessmentRepository(Application application) {
-        Database db = Database.getDatabase(application);
-        assessmentDAO = db.getAssessmentDAO();
-        assessmentList = assessmentDAO.getAllAssessment();
+        assessmentDAO = Database.getDatabase(application).getAssessmentDAO();
     }
 
     public void insertAssessment(AssessmentModel assessment){
         assessmentDAO.insertAssessment(assessment);
     }
 
-    public void deleteAssessment(AssessmentModel assessment){
-        assessmentDAO.deleteAssessment(assessment);
-    }
-
     public void deleteAssessment(int assessmentID){
         assessmentDAO.deleteAssessmentByID(assessmentID);
-    }
-
-    public List<AssessmentModel> getAllAssessmentList(){
-        return assessmentList;
     }
 
     public List<AssessmentModel> getAssessmentByTitle(String username, String title){return assessmentDAO.getAssessmentByTitle(username, title);}

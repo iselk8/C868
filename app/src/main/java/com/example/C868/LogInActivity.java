@@ -15,8 +15,6 @@ import com.google.android.material.textfield.TextInputLayout;
 public class LogInActivity extends AppCompatActivity {
 
     TextInputLayout loginUsername, loginPassword;
-    ImageView backBtn;
-    Database db;
     UserDAO userDAO;
 
     @Override
@@ -27,12 +25,12 @@ public class LogInActivity extends AppCompatActivity {
         //Hooks
         loginUsername = (TextInputLayout) findViewById(R.id.login_username_field);
         loginPassword = (TextInputLayout) findViewById(R.id.login_password_field);
-        backBtn = (ImageView) findViewById(R.id.login_back_button);
+        ImageView backBtn = (ImageView) findViewById(R.id.login_back_button);
         backBtn.setClickable(true);
 
-        //Initialization of the database and the userDAO
-        db = Database.getDatabase(getApplicationContext());
-        userDAO = db.getUserDAO();
+        //Initialization of the userDAO
+        userDAO = Database.getDatabase(getApplicationContext()).getUserDAO();
+
     }
 
     public void backBtnPressed(View v){
@@ -65,7 +63,8 @@ public class LogInActivity extends AppCompatActivity {
         }
     }
 
-    public void launchSignUpScreen(View view){
+    public void launchSignUp(View view){
+        // Creating new intent and launching the sign up activity
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
         super.finish();

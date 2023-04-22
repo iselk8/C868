@@ -14,13 +14,14 @@ public class WelcomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_welcome);
     }
 
-    public void launchLoginScreen(View view){
+    public void launchLogin(View view){
+        // Creating new intent and launching the log in activity
         Intent intent = new Intent(this, LogInActivity.class);
         startActivity(intent);
-
     }
 
-    public void launchSignUpScreen(View view){
+    public void launchSignUp(View view){
+        // Creating new intent and launching the sign up activity
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }
