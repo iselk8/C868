@@ -33,7 +33,6 @@ public class SearchActivity extends AppCompatActivity {
     RadioGroup searchTypeRadioGroup;
     TextInputLayout searchTitleField;
     Button searchBtn;
-
     ImageView backBtn;
     TextView searchResultTitle, searchResultNoDisplay;
     RecyclerView resultsRecyclerView;
@@ -58,17 +57,16 @@ public class SearchActivity extends AppCompatActivity {
         backBtn = findViewById(R.id.search_result_back_button);
         backBtn.setClickable(true);
 
+        // Instantiating the needed repositories for the search feature
         termRepo = new TermRepository(getApplication());
         courseRepo = new CourseRepository(getApplication());
         assessmentRepo = new AssessmentRepository(getApplication());
 
         Bundle extras = getIntent().getExtras();
 
-
         if(extras != null){
             username = extras.getString("username");
         }
-
 
         resultsRecyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(getApplicationContext(), resultsRecyclerView, new RecyclerItemClickListener.OnItemClickListener() {
@@ -105,7 +103,6 @@ public class SearchActivity extends AppCompatActivity {
                     }
                 })
         );
-
     }
 
     public void backBtnPressed(View view){
@@ -122,13 +119,15 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     public void search(View view){
+        // Saving the string input from the TextInputLayout
         String searchStr = searchTitleField.getEditText().getText().toString().toLowerCase();
 
+        // Grabbing the selection from the RadioGroup
         int selectedID = searchTypeRadioGroup.getCheckedRadioButtonId();
         RadioButton selection = findViewById(selectedID);
-
         type = selection.getText().toString().toLowerCase();
 
+        // Switch case to call the appropriate method depending on the selection from the RadioGroup
         switch (type){
             case "terms":
                 executeSearchTerm(searchStr);
@@ -145,10 +144,11 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void executeSearchAssessment(String searchStr) {
-        Toast.makeText(this, "assessments " + searchStr, Toast.LENGTH_LONG).show();
+        // Setting the search result TextView visible
         searchResultTitle.setVisibility(View.VISIBLE);
-        List<AssessmentModel> assessments = assessmentRepo.getAssessmentByTitle(username, searchStr);
 
+        // Retrieving the assessments that match the input
+        List<AssessmentModel> assessments = assessmentRepo.getAssessmentByTitle(username, searchStr);
 
         if(assessments.size() < 1){
             searchResultNoDisplay.setVisibility(View.VISIBLE);
@@ -161,9 +161,10 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void executeSearchCourse(String searchStr) {
-        Toast.makeText(this, "courses " + searchStr, Toast.LENGTH_LONG).show();
+        // Setting the search result TextView visible
         searchResultTitle.setVisibility(View.VISIBLE);
 
+        // Retrieving the courses that match the input
         List<CourseModel> courses = courseRepo.getCourseByTitle(username, searchStr);
 
         if(courses.size() < 1){
@@ -178,9 +179,10 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void executeSearchTerm(String searchStr) {
-        Toast.makeText(this, "terms " + searchStr, Toast.LENGTH_LONG).show();
+        // Setting the search result TextView visible
         searchResultTitle.setVisibility(View.VISIBLE);
 
+        // Retrieving the terms that match the input
         List<TermModel> terms = termRepo.getTermByTitle(username, searchStr);
 
         if(terms.size() < 1){
@@ -191,7 +193,5 @@ public class SearchActivity extends AppCompatActivity {
             resultsRecyclerView.setVisibility(View.VISIBLE);
             resultsRecyclerView.setAdapter(new TermAdapter(getApplicationContext(), terms));
         }
-
-
     }
 }

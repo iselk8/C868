@@ -15,8 +15,6 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class SignUpActivity extends AppCompatActivity {
     TextInputLayout signupName, signupUsername, signupPassword, signupConfirmPassword;
-    ImageView backBtn;
-    Database db;
     UserDAO userDAO;
 
     @Override
@@ -25,16 +23,15 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         //Hooks
-        signupName = (TextInputLayout) findViewById(R.id.signup_name_field);
-        signupUsername = (TextInputLayout) findViewById(R.id.signup_username_field);
-        signupPassword = (TextInputLayout) findViewById(R.id.signup_password_field);
-        signupConfirmPassword = (TextInputLayout) findViewById(R.id.signup_confirm_password_field);
-        backBtn = (ImageView) findViewById(R.id.signup_back_button);
+        signupName = findViewById(R.id.signup_name_field);
+        signupUsername = findViewById(R.id.signup_username_field);
+        signupPassword = findViewById(R.id.signup_password_field);
+        signupConfirmPassword = findViewById(R.id.signup_confirm_password_field);
+        ImageView backBtn = findViewById(R.id.signup_back_button);
         backBtn.setClickable(true);
 
-        //Initialization of the database and the userDAO
-        db = Database.getDatabase(getApplicationContext());
-        userDAO = db.getUserDAO();
+        //Initialization of the userDAO
+        userDAO = Database.getDatabase(getApplicationContext()).getUserDAO();
 
     }
 

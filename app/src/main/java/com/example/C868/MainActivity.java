@@ -15,38 +15,38 @@ public class MainActivity extends AppCompatActivity {
 
     private final static int SPLASH_SCREEN = 3500;
 
-    ImageView image;
-    Animation fadeIn;
-    Animation fadeOut;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        fadeIn = new AlphaAnimation(0, 1);
+        // Setting the activity to be fullscreen
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        // Creating animation and setting their duration and off set for the fading out
+        Animation fadeIn = new AlphaAnimation(0, 1);
         fadeIn.setDuration(2000);
 
-        fadeOut = new AlphaAnimation(1,0);
+        Animation fadeOut = new AlphaAnimation(1,0);
         fadeOut.setDuration(2000);
         fadeOut.setStartOffset(2000);
 
+        // Creating the animation set that will hold our animations
         AnimationSet animations = new AnimationSet(true);
         animations.addAnimation(fadeIn);
         animations.addAnimation(fadeOut);
 
-        image = findViewById(R.id.wguLogo);
+        // Hooks
+        ImageView image = findViewById(R.id.wguLogo);
+
+        // Setting animation on the ImageView
         image.setAnimation(animations);
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        // Creating new intent and launch the next activity after the animation in done
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
+            startActivity(intent);
+            finish();
         }, SPLASH_SCREEN);
-
     }
 }
